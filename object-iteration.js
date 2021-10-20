@@ -9,7 +9,6 @@ Input:
 }
 */
 
-
 /*
 Output:
 `wheelstypegoes`
@@ -24,9 +23,8 @@ etc
 */
 
 export function makeWeirdStringFromKeys(someObject) {
-    return '';
+    return `${Object.keys(someObject)}`;
 }
-
 
 /*
 Output:
@@ -36,9 +34,13 @@ Output:
     GOES: 'vroom',
 }
 */
-
 export function makeMoreScreamingKeys(someObject) {
-    return {};
+    const screamingKeys = {};
+    // prettier-ignore
+    for(let [key, value] of Object.entries(someObject)) {
+        screamingKeys[key.toUpperCase()] = value;
+    }
+    return screamingKeys;
 }
 
 /*
@@ -51,5 +53,10 @@ Output:
 */
 
 export function makeTuples(someObject) {
-    return [];
+    const tupleArr = [];
+    // prettier-ignore
+    for(let [key, value] of Object.entries(someObject)) {
+        tupleArr.push([key, value]);
+    }
+    return tupleArr;
 }
