@@ -1,10 +1,10 @@
 // IMPORT MODULES under test here:
-import { 
+import {
     makeArrayOfNamesWithMap,
     makeArrayWithIsHungry,
     makeShoutingArray,
     makeStringArray,
-    makeArrayOfArraysOfArrays
+    makeArrayOfArraysOfArrays,
 } from '../map.js';
 
 const { test, skip } = QUnit;
@@ -16,13 +16,12 @@ const pets = [
     { name: 'fluff', type: 'squirrel' },
 ];
 
-
-skip('should return all names', (expect) => {
+test('should return all names', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = ['scooter', 'sassy', 'legzo', 'fluff'];
-    
-    //Act 
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = makeArrayOfNamesWithMap(pets);
 
@@ -31,7 +30,7 @@ skip('should return all names', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('should return all objects with an added isHungry property equal to true', (expect) => {
+test('should return all objects with an added isHungry property equal to true', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = [
@@ -39,9 +38,9 @@ skip('should return all objects with an added isHungry property equal to true', 
         { name: 'sassy', isHungry: true, type: 'puppy' },
         { name: 'legzo', isHungry: true, type: 'frog' },
         { name: 'fluff', isHungry: true, type: 'squirrel' },
-    ];    
-    
-    //Act 
+    ];
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = makeArrayWithIsHungry(pets);
 
@@ -50,7 +49,7 @@ skip('should return all objects with an added isHungry property equal to true', 
     expect.deepEqual(actual, expected);
 });
 
-skip('should return a shouting array', (expect) => {
+test('should return a shouting array', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = [
@@ -58,9 +57,9 @@ skip('should return a shouting array', (expect) => {
         { name: 'SASSY', type: 'puppy' },
         { name: 'LEGZO', type: 'frog' },
         { name: 'FLUFF', type: 'squirrel' },
-    ];    
-    
-    //Act 
+    ];
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = makeShoutingArray(pets);
 
@@ -69,11 +68,16 @@ skip('should return a shouting array', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('should return a proper array of strings', (expect) => {
+test('should return a proper array of strings', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = ['scooterpuppy', 'sassypuppy', 'legzofrog', 'fluffsquirrel'];
-    //Act 
+    const expected = [
+        'scooterpuppy',
+        'sassypuppy',
+        'legzofrog',
+        'fluffsquirrel',
+    ];
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = makeStringArray(pets);
 
@@ -82,17 +86,29 @@ skip('should return a proper array of strings', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('should return a proper array of arrays', (expect) => {
+test('should return a proper array of arrays', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = [
-        [['name', 'scooter'], ['type', 'puppy']], 
-        [['name', 'sassy'], ['type', 'puppy']], 
-        [['name', 'legzo'], ['type', 'frog']], 
-        [['name', 'fluff'], ['type', 'squirrel']]
+        [
+            ['name', 'scooter'],
+            ['type', 'puppy'],
+        ],
+        [
+            ['name', 'sassy'],
+            ['type', 'puppy'],
+        ],
+        [
+            ['name', 'legzo'],
+            ['type', 'frog'],
+        ],
+        [
+            ['name', 'fluff'],
+            ['type', 'squirrel'],
+        ],
     ];
 
-    //Act 
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = makeArrayOfArraysOfArrays(pets);
 
@@ -100,6 +116,3 @@ skip('should return a proper array of arrays', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
-
-
-
