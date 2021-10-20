@@ -44,4 +44,3 @@ Output:
 export function makeSpanishLanguageArray(arr) {
     return [];
 }
-

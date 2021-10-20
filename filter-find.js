@@ -72,7 +72,6 @@ export function getAllFruitsThatCostMoreThanTwo(arr) {
     return [];
 }
 
-
 /*
 Output: 
     { 
@@ -86,7 +85,6 @@ Output:
 export function findTheCheese(arr) {
     return [];
 }
-
 
 /*
 Output: 

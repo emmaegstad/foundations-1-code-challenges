@@ -50,7 +50,6 @@ export function makeShoutingArray(arr) {
     return [];
 }
 
-
 /*
 
 Output:

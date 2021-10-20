@@ -50,7 +50,12 @@ Output:
 */
 
 export function organizePricesByKey(arr) {
-    return {};
+    // const priceObj = {};
+    // // prettier-ignore
+    // for(let item of arr) {
+    //     priceObj[item.id] = item.price;
+    // }
+    // return priceObj;
 }
 
 /*
@@ -90,9 +95,12 @@ Output:
 */
 
 export function makeAHashMap(arr) {
-    return {};
+    // const hashMap = {};
+    // arr.map((element) => {
+    //     hashMap[element.id] = element;
+    // });
+    // return hashMap;
 }
-
 
 /*
 Output: 
@@ -104,5 +112,8 @@ Output:
 */
 
 export function countByCategory(arr) {
-    return {};
+    // return arr.reduce((acc, currentVal) => {
+    //     acc[currentVal.category] = (acc[currentVal.category] || 0) + 1;
+    //     return acc;
+    // }, {});
 }

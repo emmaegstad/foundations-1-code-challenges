@@ -1,64 +1,65 @@
 // IMPORT MODULES under test here:
-import { 
+import {
     getAllDairy,
     getAllFruitsThatCostMoreThanTwo,
     findTheCheese,
-    listNamesOfAllFruits
+    listNamesOfAllFruits,
 } from '../filter-find.js';
 
 const { test, skip } = QUnit;
 
 const groceries = [
-    { 
+    {
         id: 'orange',
         price: 1,
         quantity: 1,
-        category: 'fruit'
+        category: 'fruit',
     },
-    { 
+    {
         id: 'kiwi',
         price: 3,
         quantity: 1,
-        category: 'fruit'
+        category: 'fruit',
     },
-    { 
+    {
         id: 'rice',
         price: 2,
         quantity: 1,
-        category: 'other'
+        category: 'other',
     },
-    { 
+    {
         id: 'goat milk',
         price: 4,
         quantity: 2,
-        category: 'dairy'
+        category: 'dairy',
     },
-    { 
+    {
         id: 'cheese',
         price: 7,
         quantity: 4,
-        category: 'dairy'
+        category: 'dairy',
     },
 ];
 
 skip('should return all dairy', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = [{ 
-        id: 'goat milk',
-        price: 4,
-        quantity: 2,
-        category: 'dairy'
-    },
-    { 
-        id: 'cheese',
-        price: 7,
-        quantity: 4,
-        category: 'dairy'
-    }
+    const expected = [
+        {
+            id: 'goat milk',
+            price: 4,
+            quantity: 2,
+            category: 'dairy',
+        },
+        {
+            id: 'cheese',
+            price: 7,
+            quantity: 4,
+            category: 'dairy',
+        },
     ];
-    
-    //Act 
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = getAllDairy(groceries);
 
@@ -67,19 +68,19 @@ skip('should return all dairy', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-
 skip('should return all fruits that cost more than 2', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = [{ 
-        id: 'kiwi',
-        price: 3,
-        quantity: 1,
-        category: 'fruit'
-    },
+    const expected = [
+        {
+            id: 'kiwi',
+            price: 3,
+            quantity: 1,
+            category: 'fruit',
+        },
     ];
-    
-    //Act 
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = getAllFruitsThatCostMoreThanTwo(groceries);
 
@@ -91,14 +92,14 @@ skip('should return all fruits that cost more than 2', (expect) => {
 skip('should return the cheese', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = { 
+    const expected = {
         id: 'cheese',
         price: 7,
         quantity: 4,
-        category: 'dairy'
+        category: 'dairy',
     };
-    
-    //Act 
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = findTheCheese(groceries);
 
@@ -111,8 +112,8 @@ skip('should list all the fruit names', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = ['orange', 'kiwi'];
-    
-    //Act 
+
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = listNamesOfAllFruits(groceries);
 
